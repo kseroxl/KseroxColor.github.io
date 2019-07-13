@@ -16,10 +16,10 @@ var Friend = document.getElementById("addFriend");
 var subm = document.getElementById("ok");
 
 
-var PlayerOne = document.getElementsByClassName("pl")[0].value;
-var PlayerTwo = document.getElementsByClassName("pl")[1].value;
+var PlayerOne = document.getElementsByClassName("pl")[0];
+var PlayerTwo = document.getElementsByClassName("pl")[1];
 
-PlayerOne.addEventListener("change", function() {
+PlayerOne.addEventListener("change", function() { 
     document.getElementById("name1").textContent = this.value;
 })
 

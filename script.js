@@ -132,11 +132,13 @@ for (var i = 0; i < squares.length; i++) {
                     OneActive = false;
                     PlayerOneScore++;
                     document.getElementById("name1").textContent +=  PlayerOneScore;
+                    break;
                 }
                 else if (OneActive == false){
                     OneActive = true
                     PlayerTwoScore++;
                     document.getElementById("name2").textContent +=  PlayerTwoScore;
+                    break;
                 }
                 PlayerOne.classList.toggle("activePlayer");
                 PlayerTwo.classList.toggle("activePlayer");

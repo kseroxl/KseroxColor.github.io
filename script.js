@@ -117,8 +117,10 @@ for (var i = 0; i < squares.length; i++) {
                 if (squares[i].style.backgroundColor != color) squares[i].style.display = "none";
             }           
             l.style.display = "block";
-            PlayerOne.classList.toggle("activePlayer");
-            PlayerTwo.classList.toggle("activePlayer");
+            if (PlayFriend == true) {
+                PlayerOne.classList.toggle("activePlayer");
+                PlayerTwo.classList.toggle("activePlayer");
+            }
         }
         else if (this.style.backgroundColor == color && Number(c.textContent)  > 0) { 
             for (var i = 0; i < squares.length; i++) {

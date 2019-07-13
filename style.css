@@ -167,3 +167,6 @@ input[type=text], input[type=number] {
   .display {
       display: block;
   }
+.activePlayer {
+    color: green;
+}

@@ -14,6 +14,7 @@ var color;
 var icon = document.getElementsByClassName("icon")[0];
 var Friend = document.getElementById("addFriend");
 var subm = document.getElementById("ok");
+var PlayFriend = false;
 
 
 var PlayerOne = document.getElementsByClassName("pl")[0];
@@ -26,8 +27,7 @@ PlayerOne.addEventListener("change", function() {
     document.getElementById("name1").textContent = this.value + ": " + PlayerOneScore;
 })
 
-PlayerOne.addEventListener("change", function() { 
-    PlayerTwo.addEventListener("input", function() {
+PlayerTwo.addEventListener("change", function() { 
     document.getElementById("name2").textContent = this.value + ": " + PlayerTwoScore;
 })
 
@@ -104,6 +104,8 @@ subm.addEventListener ("click", function() {
         else easyHard(squares.length);
         document.getElementById("name1").textContent += ": " + PlayerOneScore;
         document.getElementById("name2").textContent += ": " + PlayerTwoScore;
+        PlayFriend = true;
+        PlayerOne.classList.add("activePlayer");
 })  
 
 for (var i = 0; i < squares.length; i++) {
@@ -127,8 +129,3 @@ for (var i = 0; i < squares.length; i++) {
         }
     })
 }
-
-
-
-
-

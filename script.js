@@ -98,7 +98,8 @@ icon.addEventListener ("click", function() {
 subm.addEventListener ("click", function() {
         Friend.style.display = "none";
         document.getElementById("main").style.opacity = "1";
-        document.getElementById("player1").classList.add("display", "activePlayer"); 
+        document.getElementById("player1").classList.add("display");
+        document.getElementById("player1").classList.add("activePlayer");  
         document.getElementById("player2").classList.add("display");
         if (PlayTo == (squares.length/2)-1) easyHard(squares.length/2);
         else easyHard(squares.length);

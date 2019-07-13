@@ -15,6 +15,7 @@ var icon = document.getElementsByClassName("icon")[0];
 var Friend = document.getElementById("addFriend");
 var subm = document.getElementById("ok");
 var PlayFriend = false;
+var OneActive = true;
 
 
 var PlayerOne = document.getElementsByClassName("pl")[0];
@@ -116,21 +117,27 @@ for (var i = 0; i < squares.length; i++) {
                 if (squares[i].style.backgroundColor != color) squares[i].style.display = "none";
             }           
             l.style.display = "block";
+            PlayerOne.classList.toggle("activePlayer");
+            PlayerTwo.classList.toggle("activePlayer");
         }
         else if (this.style.backgroundColor == color && Number(c.textContent)  > 0) { 
             for (var i = 0; i < squares.length; i++) {
                 if (squares[i].style.backgroundColor != color) squares[i].style.display = "none";
             }             
             w.style.display = "block";
-            if (PlayFriend) {
-                if (PlayerOne.style.color == "green"){
+            if (PlayFriend == true) {
+                if (OneActive == true){
+                    OneActive = false;
                     PlayerOneScore++;
                     document.getElementById("name1").textContent +=  PlayerOneScore;
                 }
-                else {
+                else if (OneActive == false){
+                    OneActive = true
                     PlayerTwoScore++;
                     document.getElementById("name2").textContent +=  PlayerTwoScore;
                 }
+                PlayerOne.classList.toggle("activePlayer");
+                PlayerTwo.classList.toggle("activePlayer");
             }
         }
         else if (this.style.backgroundColor !== color && Number(c.textContent)  > 0) {            

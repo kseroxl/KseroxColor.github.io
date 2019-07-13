@@ -19,11 +19,12 @@ var subm = document.getElementById("ok");
 var PlayerOne = document.getElementsByClassName("pl")[0];
 var PlayerTwo = document.getElementsByClassName("pl")[1];
 
-PlayerOne.addEventListener("input", function() { 
+PlayerOne.addEventListener("change", function() { 
     document.getElementById("name1").textContent = this.value;
 })
 
-PlayerTwo.addEventListener("input", function() {
+PlayerOne.addEventListener("change", function() { 
+    PlayerTwo.addEventListener("input", function() {
     document.getElementById("name2").textContent = this.value;
 })
 

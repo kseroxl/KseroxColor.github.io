@@ -102,6 +102,8 @@ subm.addEventListener ("click", function() {
         document.getElementById("player2").classList.add("display");
         if (PlayTo == (squares.length/2)-1) easyHard(squares.length/2);
         else easyHard(squares.length);
+        document.getElementById("name1").textContent += ": " + PlayerOneScore;
+        document.getElementById("name2").textContent += ": " + PlayerTwoScore;
 })  
 
 for (var i = 0; i < squares.length; i++) {

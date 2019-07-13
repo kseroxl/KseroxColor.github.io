@@ -28,7 +28,7 @@ PlayerOne.addEventListener("change", function() {
 
 PlayerOne.addEventListener("change", function() { 
     PlayerTwo.addEventListener("input", function() {
-    document.getElementById("name2").textContent = this.value + ": " + PlayerOneScore;
+    document.getElementById("name2").textContent = this.value + ": " + PlayerTwoScore;
 })
 
 function rand(num) {

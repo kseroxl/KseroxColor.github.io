@@ -19,13 +19,16 @@ var subm = document.getElementById("ok");
 var PlayerOne = document.getElementsByClassName("pl")[0];
 var PlayerTwo = document.getElementsByClassName("pl")[1];
 
+var PlayerOneScore = 0;
+var PlayerTwoScore = 0;
+
 PlayerOne.addEventListener("change", function() { 
-    document.getElementById("name1").textContent = this.value;
+    document.getElementById("name1").textContent = this.value + ": " + PlayerOneScore;
 })
 
 PlayerOne.addEventListener("change", function() { 
     PlayerTwo.addEventListener("input", function() {
-    document.getElementById("name2").textContent = this.value;
+    document.getElementById("name2").textContent = this.value + ": " + PlayerOneScore;
 })
 
 function rand(num) {

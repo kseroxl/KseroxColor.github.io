@@ -24,11 +24,11 @@ var PlayerOneScore = 0;
 var PlayerTwoScore = 0;
 
 PlayerOne.addEventListener("change", function() { 
-    document.getElementById("name1").textContent = this.value + ": " + PlayerOneScore;
+    document.getElementById("name1").textContent = this.value;
 })
 
 PlayerTwo.addEventListener("change", function() { 
-    document.getElementById("name2").textContent = this.value + ": " + PlayerTwoScore;
+    document.getElementById("name2").textContent = this.value;
 })
 
 function rand(num) {

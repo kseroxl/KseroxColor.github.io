@@ -24,11 +24,11 @@ var PlayerOneScore = 0;
 var PlayerTwoScore = 0;
 
 PlayerOne.addEventListener("change", function() { 
-    document.getElementById("name1").textContent = this.value;
+    document.getElementById("name1").textContent = this.value + ": ";
 })
 
 PlayerTwo.addEventListener("change", function() { 
-    document.getElementById("name2").textContent = this.value;
+    document.getElementById("name2").textContent = this.value + ": ";
 })
 
 function rand(num) {
@@ -103,8 +103,8 @@ subm.addEventListener ("click", function() {
         document.getElementById("player2").classList.add("display");
         if (PlayTo == (squares.length/2)-1) easyHard(squares.length/2);
         else easyHard(squares.length);
-        document.getElementById("name1").textContent += ": " + PlayerOneScore;
-        document.getElementById("name2").textContent += ": " + PlayerTwoScore;
+        document.getElementById("name1").textContent +=  PlayerOneScore;
+        document.getElementById("name2").textContent +=  PlayerTwoScore;
         PlayFriend = true;
 })  
 
@@ -122,6 +122,16 @@ for (var i = 0; i < squares.length; i++) {
                 if (squares[i].style.backgroundColor != color) squares[i].style.display = "none";
             }             
             w.style.display = "block";
+            if (PlayFriend) {
+                if (PlayerOne.style.color == "green"){
+                    PlayerOneScore++;
+                    document.getElementById("name1").textContent +=  PlayerOneScore;
+                }
+                else {
+                    PlayerTwoScore++;
+                    document.getElementById("name2").textContent +=  PlayerTwoScore;
+                }
+            }
         }
         else if (this.style.backgroundColor !== color && Number(c.textContent)  > 0) {            
             c.textContent = Number(c.textContent) - 1;

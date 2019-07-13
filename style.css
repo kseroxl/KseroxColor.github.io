@@ -1,0 +1,169 @@
+body{
+    font-family: "Muli", sans-serif;
+    background-color: #2D2A32;
+    margin: 0;
+    
+}
+#main {
+    opacity: 1;
+}
+#df {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+ #head {
+    width: 100%;
+    height: 120%;
+    padding: 20px 0;
+    background-color: #DDD92A;
+}
+h1{
+    text-align: center;
+    color: #2D2A32;
+    line-height: 70px;
+}
+#RGB{
+    font-size: 60px;
+}
+#nav {
+    background-color: #EEEFA8;
+    height: 50px;
+    padding: 0 20%;
+    display: flex;
+    color: #2D2A32
+}
+#nav > a{
+    height: 100%;
+    text-decoration: none;
+    padding: 15px 10px;
+    margin-left: 30px;
+    box-sizing: border-box;
+}
+#new{
+    position: relative;
+    margin-right: 60%;
+}
+#nav >a:hover{ 
+    color: #DDD92A; 
+    background-color:#2D2A32;
+}
+.active {
+    background-color:#2D2A32;
+    color: #DDD92A; 
+}
+.hovered {
+    background-color: #2D2A32;
+}
+h3 {
+    color: white;
+    text-align: center;
+}
+#playground{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    justify-content: space-around;
+}
+.square {
+    margin: 10px 0;
+    width: 200px;
+    height: 200px;
+    background-color: #EEEFA8;
+    border-radius: 10%;
+}
+.square:hover{
+    cursor: pointer;
+}
+#lose {
+    display: none; 
+    color: red;
+    text-align: center;
+    padding-top: 3rem;
+    font-size: 50px;
+}
+#win {
+    display: none; 
+    color: #00ff40;
+    text-align: center;
+    padding-top: 3rem;
+    font-size: 50px;
+}
+.icon {
+    height: auto;
+    width: 70px;    
+    color: #DDD92A;
+    background-color: #2D2A32;
+    padding: 30px 7px 0 7px;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    margin-right: 10px;
+}
+#buttons {
+    position: absolute;
+    left: 10%;
+    top: 0%;
+    margin: 0;
+}
+#addFriend {
+    height: auto;
+    width: 400px;
+    background-color: #EEEFA8;
+    border-radius: 10px;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    color: #2D2A32;
+    padding: 10px;
+    border: 2px solid #2D2A32;
+    animation: anim 0.5s linear;
+    transition: scale 0.5s;
+    display: none; 
+    z-index: 1;
+}
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=button] {
+    width: 100%;
+    background-color: #2D2A32;
+    color: #DDD92A;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  @keyframes anim{
+      0%{
+        transform: scale(0);
+      } 
+      25% {
+          transform: scale(25%);
+      }
+      50% {
+        transform: scale(50%);
+        }
+        100% {
+            transform: scale(100%);
+        }
+  }
+  .players{
+      color: white;
+      margin: 20px;
+      text-align: center;
+      display: none;
+  }
+  .display {
+      display: block;
+  }

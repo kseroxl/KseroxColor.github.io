@@ -117,7 +117,7 @@ for (var i = 0; i < squares.length; i++) {
                 if (squares[i].style.backgroundColor != color) squares[i].style.display = "none";
             }           
             l.style.display = "block";
-            if (PlayFriend == true) {
+            if (PlayFriend === true) {
                 PlayerOne.classList.toggle("activePlayer");
                 PlayerTwo.classList.toggle("activePlayer");
             }
@@ -127,7 +127,7 @@ for (var i = 0; i < squares.length; i++) {
                 if (squares[i].style.backgroundColor != color) squares[i].style.display = "none";
             }             
             w.style.display = "block";
-            if (PlayFriend == true) {
+            if (PlayFriend === true) {
                 if (OneActive == true){
                     OneActive = false;
                     PlayerOneScore++;

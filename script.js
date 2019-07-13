@@ -16,9 +16,8 @@ var Friend = document.getElementById("addFriend");
 var subm = document.getElementById("ok");
 
 
-
-var PlayerOne;
-var PlayerTwo;
+var PlayerOne = document.getElementsByClassName("pl")[0].value;
+var PlayerTwo = document.getElementsByClassName("pl")[1].value;
 
 function rand(num) {
     return Math.floor(Math.random() * num);

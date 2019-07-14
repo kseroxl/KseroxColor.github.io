@@ -12,24 +12,35 @@ var PlayTo = 3;
 var startNum = 6;
 var color;
 var icon = document.getElementsByClassName("icon")[0];
+var icon2 = document.getElementsByClassName("icon")[1];
 var Friend = document.getElementById("addFriend");
 var subm = document.getElementById("ok");
 var PlayFriend = false;
-var OneActive = true;
+var OneActive = false;
+var won = false;
+var MaxScore = document.getElementById("number").value; 
 
 
 var PlayerOne = document.getElementsByClassName("pl")[0];
 var PlayerTwo = document.getElementsByClassName("pl")[1];
 
+var name1 = document.getElementsByClassName("players")[0];
+var name2 = document.getElementsByClassName("players")[1];
+
+
 var PlayerOneScore = 0;
 var PlayerTwoScore = 0;
 
 PlayerOne.addEventListener("change", function() { 
-    document.getElementById("name1").textContent = this.value + ": ";
+    document.getElementById("name1").textContent = this.value;
 })
 
 PlayerTwo.addEventListener("change", function() { 
-    document.getElementById("name2").textContent = this.value + ": ";
+    document.getElementById("name2").textContent = this.value;
+})
+
+document.getElementById("number").addEventListener("change", function(){
+    MaxScore = this.value;
 })
 
 function rand(num) {
@@ -71,14 +82,48 @@ generate(startNum);
 
 
 newGame.addEventListener("click", function() {
+    w.textContent = "You win!";
+    if (PlayFriend == true) {
+        if (won == true) {
+            PlayerOneScore = 0;
+            PlayerTwoScore = 0;
+            document.getElementsByClassName("score")[0].textContent =  PlayerOneScore;
+            document.getElementsByClassName("score")[1].textContent =  PlayerTwoScore;
+            w.textContent = "You win!";
+            document.getElementById("player1").classList.add("activePlayer");  
+            document.getElementById("player2").classList.remove("activePlayer");
+            OneActive = true;
+        }
+        else {
+            if (OneActive == false) {
+                OneActive = true;
+            }
+            else {
+                OneActive = false;
+            } 
+            name1.classList.toggle("activePlayer");
+            name2.classList.toggle("activePlayer");
+        }
+        if (won == true) won = false;
+    }
     if (PlayTo == (squares.length/2)-1) easyHard(squares.length/2);
-    else easyHard(squares.length);
+    else easyHard(squares.length);   
 }
 )
 
 hard.addEventListener ("click", function () {    
     easy.classList.toggle("active");
     hard.classList.toggle("active");
+    if (PlayFriend == true) {
+        PlayerOneScore = 0;
+        PlayerTwoScore = 0;
+        document.getElementsByClassName("score")[0].textContent =  PlayerOneScore;
+        document.getElementsByClassName("score")[1].textContent =  PlayerTwoScore;
+        w.textContent = "You win!";
+        document.getElementById("player1").classList.add("activePlayer");  
+        document.getElementById("player2").classList.remove("activePlayer");
+        OneActive = true;
+    }
     easyHard(squares.length);
 })
 
@@ -88,12 +133,36 @@ easy.addEventListener("click", function() {
     for (var i = squares.length/2; i < squares.length; i++) {
         squares[i].style.display = "none";
     }
+    if (PlayFriend == true) {
+        PlayerOneScore = 0;
+        PlayerTwoScore = 0;
+        document.getElementsByClassName("score")[0].textContent =  PlayerOneScore;
+        document.getElementsByClassName("score")[1].textContent =  PlayerTwoScore;
+        w.textContent = "You win!";
+        document.getElementById("player1").classList.add("activePlayer");  
+        document.getElementById("player2").classList.remove("activePlayer");
+        OneActive = true;
+    }
     easyHard(squares.length/2);
 })
 
 icon.addEventListener ("click", function() {
     Friend.style.display = "block";
     document.getElementById("main").style.opacity = "0.4";
+    PlayerOneScore = 0;
+    PlayerTwoScore = 0;
+})
+
+icon2.addEventListener ("click", function() {
+    w.textContent = "You win!";
+    PlayFriend = false;
+    MaxScore = 3;
+    name1.classList.remove("display");
+    name2.classList.remove("display");
+    PlayerOneScore = 0;
+    PlayerTwoScore = 0;
+    if (PlayTo == (squares.length/2)-1) easyHard(squares.length/2);
+    else easyHard(squares.length);  
 })
 
 subm.addEventListener ("click", function() {
@@ -102,11 +171,13 @@ subm.addEventListener ("click", function() {
         document.getElementById("player1").classList.add("display");
         document.getElementById("player1").classList.add("activePlayer");  
         document.getElementById("player2").classList.add("display");
+        document.getElementById("player2").classList.remove("activePlayer");
+        PlayFriend = true;
+        OneActive = true;        
+        document.getElementsByClassName("score")[0].textContent =  PlayerOneScore;
+        document.getElementsByClassName("score")[1].textContent =  PlayerTwoScore;
         if (PlayTo == (squares.length/2)-1) easyHard(squares.length/2);
         else easyHard(squares.length);
-        document.getElementById("name1").textContent +=  PlayerOneScore;
-        document.getElementById("name2").textContent +=  PlayerTwoScore;
-        PlayFriend = true;
 })  
 
 for (var i = 0; i < squares.length; i++) {
@@ -117,34 +188,34 @@ for (var i = 0; i < squares.length; i++) {
                 if (squares[i].style.backgroundColor != color) squares[i].style.display = "none";
             }           
             l.style.display = "block";
-            if (PlayFriend === true) {
-                PlayerOne.classList.toggle("activePlayer");
-                PlayerTwo.classList.toggle("activePlayer");
-            }
         }
-        else if (this.style.backgroundColor == color && Number(c.textContent)  > 0) { 
+        else if (this.style.backgroundColor == color && Number(c.textContent)  > 0 &&  w.style.display == "none") { 
             for (var i = 0; i < squares.length; i++) {
                 if (squares[i].style.backgroundColor != color) squares[i].style.display = "none";
             }             
-            w.style.display = "block";
             if (PlayFriend === true) {
                 if (OneActive == true){
-                    OneActive = false;
                     PlayerOneScore++;
-                    document.getElementById("name1").textContent +=  PlayerOneScore;
+                    if (PlayerOneScore == MaxScore) {
+                        w.textContent = document.getElementById("name1").textContent + " wins the Game!";
+                        won = true;
+                    }
+                    document.getElementsByClassName("score")[0].textContent =  PlayerOneScore;
                 }
                 else if (OneActive == false){
-                    OneActive = true
                     PlayerTwoScore++;
-                    document.getElementById("name2").textContent +=  PlayerTwoScore;
+                    if (PlayerTwoScore == MaxScore) {
+                        w.textContent = document.getElementById("name2").textContent + " wins the Game!";
+                        won = true;
+                    }
+                    document.getElementsByClassName("score")[1].textContent =  PlayerTwoScore;
                 }
-                PlayerOne.classList.toggle("activePlayer");
-                PlayerTwo.classList.toggle("activePlayer");
             }
+            w.style.display = "block";
         }
         else if (this.style.backgroundColor !== color && Number(c.textContent)  > 0) {            
             c.textContent = Number(c.textContent) - 1;
             this.style.visibility = "hidden";
-        }
+        }      
     })
 }

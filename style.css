@@ -168,5 +168,5 @@ input[type=text], input[type=number] {
       display: block;
   }
 .activePlayer {
-    color: green;
+    color: #00ff40;
 }

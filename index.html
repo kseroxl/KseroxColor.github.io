@@ -16,7 +16,7 @@
         <label>Player 2: </label>
         <input type="text" name="Payer 2" placeholder="Player 2.." class="pl"><br>
         <label>Play to:  </label>
-        <input type="number" placeholder="3" value="3">
+        <input type="number" placeholder="3" value="3" id="number">
         <input type="button" value="Ok" id="ok">
     </form>
     <div id="main">
@@ -44,7 +44,7 @@
     <div id="df">        
         <div id="player1" class="players">
                 <i class="fas fa-user-alt"></i> 
-                <p id="name1">Player 1</p>
+                <p ><span id="name1">Player 1</span>: <span class="score"> 0 </span> </p>
         </div>
         <div id="playground">
             <div class="square"></div>
@@ -56,7 +56,7 @@
         </div>
         <div id="player2" class="players">
                 <i class="fas fa-user-alt"></i> 
-                <p id="name2">Player 2</p>
+                <p ><span id="name2">Player 2</span>: <span class="score"> 0 </span> </p>
         </div>
     </div>
 </div>

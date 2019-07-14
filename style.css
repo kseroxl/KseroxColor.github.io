@@ -187,9 +187,18 @@ input[type=text], input[type=number] {
     h1{
         line-height: 50px;
         font-size: 30px;
+        margin-top: 65px;
     }
     #RGB{
         font-size: 50px;
+    }
+    #playground {
+        width: 45%;
+    }
+    .icon {
+        height: 50px;
+        width: auto;    
+        font-size: 12px;
     }
 }
 
@@ -200,6 +209,12 @@ input[type=text], input[type=number] {
     }
     #playground {
         width: 40%;
+    }
+    #nav {
+        padding: 0 15%;
+    }
+    #new{
+        margin-right: 50%;
     }
 }
 
@@ -214,6 +229,19 @@ input[type=text], input[type=number] {
     .players{
         margin: 10px;
         font-size: 12px;
+    }
+    #nav > a{
+        padding: 15px 10px;
+        margin-left: 30px;
+    }
+    #new{
+        margin-right: 30%;
+    }
+    #addFriend {
+        transform: scale(0.7);
+        position: absolute;
+        top: 20%;
+        left: 25%;
     }
 }
 
@@ -235,6 +263,12 @@ input[type=text], input[type=number] {
     #RGB{
         font-size: 40px;
     }
+    #new{
+        margin-right: 20%;
+    }
+    #nav {        
+        font-size: 12px;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -252,11 +286,43 @@ input[type=text], input[type=number] {
         margin: 5px;
         font-size: 11px;
     }
+    #nav {
+        padding: 0 0;
+    }
+    #new{
+        margin-right: 25%;
+    }
+    #addFriend {
+        transform: scale(0.4);
+        position: absolute;
+        top: 10%;
+        left: 0;
+    }
 }
 
-@media only screen and (max-width: 390px) {
+@media only  screen and (max-width: 390px) {
     .square {
         width: 40px;
         height: 40px;
+    }
+    h1{
+        line-height: 30px;
+        font-size: 18px;
+    }
+    #RGB{
+        font-size: 25px;
+    }
+    #playground{
+        width: 75%;
+    }
+    #new{
+        margin-right: 0;
+    }
+    #addFriend {
+        transform: scale(0.4);
+        position: absolute;
+        top: 10%;
+        left: 0;
+        margin-left: -40px;
     }
 }

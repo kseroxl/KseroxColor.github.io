@@ -11,6 +11,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin: 0 auto;
 }
  #head {
     width: 100%;
@@ -31,7 +32,7 @@ h1{
     height: 50px;
     padding: 0 20%;
     display: flex;
-    color: #2D2A32
+    color: #2D2A32;
 }
 #nav > a{
     height: 100%;
@@ -39,6 +40,7 @@ h1{
     padding: 15px 10px;
     margin-left: 30px;
     box-sizing: border-box;
+    align-items: center;
 }
 #new{
     position: relative;
@@ -169,4 +171,92 @@ input[type=text], input[type=number] {
   }
 .activePlayer {
     color: #00ff40;
+}
+
+@media screen and (max-width: 1220px) {
+    .square {
+        width: 150px;
+        height: 150px;
+    }
+    #nav {
+        height: 60px;
+    }
+    #new{
+        margin-right: 50%;
+    }
+    h1{
+        line-height: 50px;
+        font-size: 30px;
+    }
+    #RGB{
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .square {
+        width: 100px;
+        height: 100px;
+    }
+    #playground {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .square {
+        width: 70px;
+        height: 70px;
+    }
+    #playground {
+        width: 35%;
+    }
+    .players{
+        margin: 10px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .square {
+        width: 50px;
+        height: 50px;
+    }
+    #playground {
+        width: 50%;
+    }
+    #df {
+        width: 60%;
+    }
+    h1{
+        line-height: 40px;
+        font-size: 20px;
+    }
+    #RGB{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .square {
+        width: 50px;
+        height: 50px;
+    }
+    #playground {
+        width: 60%;
+    }
+    #df {
+        width: 65%;
+    }
+    .players{
+        margin: 5px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .square {
+        width: 40px;
+        height: 40px;
+    }
 }

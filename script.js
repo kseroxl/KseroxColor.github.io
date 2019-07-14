@@ -112,8 +112,8 @@ newGame.addEventListener("click", function() {
 )
 
 hard.addEventListener ("click", function () {    
-    easy.classList.toggle("active");
-    hard.classList.toggle("active");
+    easy.classList.remove("active");
+    hard.classList.add("active");
     if (PlayFriend == true) {
         PlayerOneScore = 0;
         PlayerTwoScore = 0;
@@ -128,8 +128,8 @@ hard.addEventListener ("click", function () {
 })
 
 easy.addEventListener("click", function() {    
-    easy.classList.toggle("active");
-    hard.classList.toggle("active");
+    easy.classList.add("active");
+    hard.classList.remove("active");
     for (var i = squares.length/2; i < squares.length; i++) {
         squares[i].style.display = "none";
     }

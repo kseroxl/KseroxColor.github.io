@@ -3,7 +3,7 @@ var first = document.getElementsByClassName("square")[0];
 var squares = document.getElementsByClassName("square");
 var playground = document.getElementById("playground");
 var l = document.getElementById("lose");
-var w = document.getElementById("win");
+var w = document.getElementById("win");w.style.display == "none";
 var newGame = document.getElementById("new");
 var c = document.getElementById("chances");
 var easy = document.getElementById("easy");
@@ -189,7 +189,7 @@ for (var i = 0; i < squares.length; i++) {
             }           
             l.style.display = "block";
         }
-        else if (this.style.backgroundColor == color && Number(c.textContent)  > 0 &&  w.style.display == "none") { 
+        else if (this.style.backgroundColor == color && Number(c.textContent)  > 0 && w.style.display != "block") { 
             for (var i = 0; i < squares.length; i++) {
                 if (squares[i].style.backgroundColor != color) squares[i].style.display = "none";
             }             

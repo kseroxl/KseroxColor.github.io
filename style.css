@@ -115,8 +115,10 @@ h3 {
     background-color: #EEEFA8;
     border-radius: 10px;
     position: absolute;
-    top: 30%;
-    left: 35%;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
     color: #2D2A32;
     padding: 10px;
     border: 2px solid #2D2A32;
@@ -239,9 +241,6 @@ input[type=text], input[type=number] {
     }
     #addFriend {
         transform: scale(0.7);
-        position: absolute;
-        top: 20%;
-        left: 25%;
     }
 }
 
@@ -293,10 +292,7 @@ input[type=text], input[type=number] {
         margin-right: 25%;
     }
     #addFriend {
-        transform: scale(0.4);
-        position: absolute;
-        top: 10%;
-        left: 0;
+        transform: scale(0.5);
     }
 }
 
@@ -313,16 +309,13 @@ input[type=text], input[type=number] {
         font-size: 25px;
     }
     #playground{
-        width: 75%;
+        width: 70%;
     }
     #new{
         margin-right: 0;
     }
     #addFriend {
         transform: scale(0.4);
-        position: absolute;
-        top: 10%;
-        left: 0;
-        margin-left: -40px;
+        margin-left: -35px; 
     }
 }
